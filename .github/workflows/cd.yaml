@@ -19,8 +19,8 @@ jobs:
           EC2_SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
         run: |
           mkdir -p ~/.ssh
-          echo "$env:secrets.EC2_SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
-          echo "EC2 Host: $env:secrets.EC2_HOST"
+          echo "$env:EC2_SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+          echo "EC2 Host: $env:EC2_HOST"
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -H "$env:EC2_HOST" >> ~/.ssh/known_hosts
 
