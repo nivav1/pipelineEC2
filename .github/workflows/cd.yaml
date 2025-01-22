@@ -37,7 +37,7 @@ jobs:
         run: |
           ssh ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << 'EOF'
             rm -rf ~/my-app
-            git clone https://github.com/<your-github-username>/Project_1.git ~/my-app
+            git clone https://github.com/nivav1/pipelineEC2.git ~/my-app
           EOF
 
       - name: Deploy with Docker Compose
