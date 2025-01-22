@@ -19,10 +19,10 @@ jobs:
           EC2_SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
         run: |
           mkdir -p ~/.ssh
-          echo "$env:EC2_SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
-          echo "EC2 Host: $env:EC2_HOST"
+          echo "$EC2_SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+          echo "EC2 Host: $EC2_HOST"
           chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -H "$env:EC2_HOST" >> ~/.ssh/known_hosts
+          ssh-keyscan -H "$EC2_HOST" >> ~/.ssh/known_hosts
 
       - name: Install Docker on EC2
         run: |
